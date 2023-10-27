@@ -47,3 +47,15 @@ int main() {
 
     return 0;
 }
+/*
+output:Enter the size of the array: 7
+Enter 7 elements:
+11
+1
+11
+14
+7
+16
+9
+Good array number of elements after removing minimum elements:6
+*/
