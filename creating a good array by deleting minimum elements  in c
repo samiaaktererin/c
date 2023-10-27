@@ -1,0 +1,52 @@
+//creating a good array by deleting minimum elements
+#include <stdio.h>
+
+int main() {
+    int size, i, min, count = 0;
+
+    // Input the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    int numbers[size];
+
+    // Input elements into the array
+    printf("Enter %d elements:\n", size);
+    for (i = 0; i < size; i++) {
+        scanf("%d", &numbers[i]);
+    }
+
+    // Find the minimum element in the array
+    min = numbers[0];
+    for (i = 1; i < size; i++) {
+        if (numbers[i] < min) {
+            min = numbers[i];
+        }
+    }
+
+    // Count the number of occurrences of the minimum element
+    for (i = 0; i < size; i++) {
+        if (numbers[i] == min) {
+            count++;
+        }
+    }
+
+    // Remove minimum elements from the array
+    int newSize = size - count;
+    int goodArray[newSize];
+    int j = 0;
+    for (i = 0; i < size; i++) {
+        if (numbers[i] != min) {
+            goodArray[j] = numbers[i];
+            j++;
+        }
+    }
+
+    // Output the good array
+    printf("Good array after removing minimum elements:\n");
+    for (i = 0; i < newSize; i++) {
+        printf("%d ", goodArray[i]);
+    }
+
+    return 0;
+}
